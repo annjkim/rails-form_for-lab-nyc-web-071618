@@ -53,7 +53,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :school_classes
-  post "/school_classes/new", to: "school_classes#create", as: :create
-  resources :students
+  resources :school_classes, only: [:index, :show, :new, :create, :update, :edit]
+  resources :students, only: [:index, :show, :new, :create, :update, :edit]
 end
